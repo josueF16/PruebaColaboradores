@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using VideoJuego.Context;
+using WebApplication2.context;
 
 var builder = WebApplication.CreateBuilder(args);
 

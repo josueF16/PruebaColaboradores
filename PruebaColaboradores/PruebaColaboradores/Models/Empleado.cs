@@ -10,7 +10,7 @@ namespace WebApplication2.Models
         public string Apellido { get; set; }
         public bool Genero { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public int IdTitulo { get; set; }
+        public int ÍdDepartamento { get; set; }
 
 
     }

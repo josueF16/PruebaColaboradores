@@ -8,10 +8,6 @@ namespace WebApplication2.context
         public AplicacionContexto
             (DbContextOptions<AplicacionContexto> options)
             : base(options) { }
-
-   
         public DbSet<Titulo> Titulos { get; set; }
-
-
     }
 }

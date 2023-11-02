@@ -6,12 +6,12 @@ namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SeguroController : ControllerBase
+    public class SalarioController : ControllerBase
     {
-        private readonly ILogger<SeguroController> _logger;
+        private readonly ILogger<SalarioController> _logger;
         private readonly AplicacionContexto _aplicacionContexto;
-        public SeguroController(
-            ILogger<SeguroController> logger,
+        public SalarioController(
+            ILogger<SalarioController> logger,
             AplicacionContexto aplicacionContexto)
         {
             _logger = logger;
@@ -21,42 +21,42 @@ namespace WebApplication2.Controllers
         //[Route("")]
         [HttpPost]
         public IActionResult Post(
-            [FromBody] Seguro seguro)
+            [FromBody] Salario salario)
         {
-            _aplicacionContexto.Seguros.Add(seguro);
+            _aplicacionContexto.Salarios.Add(salario);
             _aplicacionContexto.SaveChanges();
-            return Ok(seguro);
+            return Ok(salario);
         }
         //READ: Obtener lista de estudiantes
         //[Route("")]
         [HttpGet]
 
-        public IEnumerable<Seguro> Get()
+        public IEnumerable<Salario> Get()
         {
-            return _aplicacionContexto.Seguros.ToList();
+            return _aplicacionContexto.Salarios.ToList();
         }
 
         //Update: Modificar estudiantes
         //[Route("/id")]
         [HttpPut]
-        public IActionResult Put([FromBody] Seguro seguro)
+        public IActionResult Put([FromBody] Salario salario)
         {
-            _aplicacionContexto.Seguros.Update(seguro);
+            _aplicacionContexto.Salarios.Update(salario);
             _aplicacionContexto.SaveChanges();
-            return Ok(seguro);
+            return Ok(salario);
 
         }
         //Delete: Eliminar estudiantes
         //[Route("/id")]
         [HttpDelete]
-        public IActionResult Delete(int seguroID)
+        public IActionResult Delete(int salarioID)
         {
-            _aplicacionContexto.Seguros.Remove(
-                _aplicacionContexto.Seguros.ToList()
-                .Where(x => x.IdSeguro == seguroID)
+            _aplicacionContexto.Salarios.Remove(
+                _aplicacionContexto.Salarios.ToList()
+                .Where(x => x.IdSalario == salarioID)
                 .FirstOrDefault());
             _aplicacionContexto.SaveChanges();
-            return Ok(seguroID);
+            return Ok(salarioID);
         }
     }
 }

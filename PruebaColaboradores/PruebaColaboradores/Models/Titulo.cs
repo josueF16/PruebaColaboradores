@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+ing System.ComponentModel.DataAnnotations;
 
 namespace WebApplication2.Models
 {
